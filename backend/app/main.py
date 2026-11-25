@@ -2,6 +2,7 @@
 FastAPI Application Entrypoint for AI Project Manager Agent.
 """
 
+import os
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -25,14 +26,19 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# Enable CORS for Vite React frontend
+# Enable CORS for local Vite React frontend and deployed Netlify frontend
+_allowed_origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:3000",
+]
+if os.getenv("FRONTEND_URL"):
+    _allowed_origins.append(os.getenv("FRONTEND_URL").rstrip("/"))
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "http://localhost:3000",
-    ],
+    allow_origins=_allowed_origins,
+    allow_origin_regex=r"https://.*\.netlify\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
