@@ -4,7 +4,9 @@ A human-in-the-loop **AI Project Manager Agent** that ingests meeting transcript
 
 **Core Guarantee:** Nothing reaches Jira or external systems without explicit Project Manager approval.
 
-> **Demo Video:** [Click here](https://drive.google.com/file/d/1uEXVjfutXLlOECKsYU3kleRsp2-p48dr/view?usp=sharing)
+> **Live App (Netlify):** https://ai-project-manager-poz.netlify.app/  
+> **Live API (Render):** https://ai-project-manager-j6n1.onrender.com  
+> **Quick Demo Video:** [Click here](https://drive.google.com/file/d/1uEXVjfutXLlOECKsYU3kleRsp2-p48dr/view?usp=sharing)
 
 ---
 
